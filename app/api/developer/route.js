@@ -5,21 +5,25 @@ import mongoConnection from "@/lib/mongoose/mongoConnection";
 
 export async function GET(req, res) {
     await mongoConnection();
-    const { searchParams } = new URL(req.url);
+    const { searchParams } = req.nextUrl;
     const email = searchParams.get("email");
     const password = searchParams.get("password");
+    console.log(email,password)
   
     try {
       const user = await User.findOne({
         email,
         password,
       });
+      console.log(user)
       if (user) {
         return NextResponse.json({ user }, { status: 200 });
       } else {
-        return NextResponse.json({ message: "error" }, { status: 500 });
+        return NextResponse.json({ message: "Failed to GET data, @route.js" }, { status: 500 });
       }
     } catch (error) {
+      console.error(error.message);
+
       return NextResponse.json(
         {
           message: "error",
@@ -50,7 +54,7 @@ export async function POST(req, res) {
   } catch (error) {
     return NextResponse.json(
       {
-        message: "Faild",
+        message: "Failed",
       },
       {
         status: 500,

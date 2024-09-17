@@ -1,28 +1,32 @@
 "use client";
+import { useRouter } from "next/navigation";
+import {userStore} from "@/lib/zustand/userStore";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { get } from "mongoose";
 
 function Login() {
+  const router = useRouter();
+  const {setUser} = userStore();
   const [email, setEmail] = useState("");
-  const [passowrd, setPassword] = useState("");
+  const [password, setPassword] = useState("");
   const emailupdate = (event) => {
     setEmail(event.target.value);
   };
   const submitHandle = async(event) => {
     event.preventDefault()
     try {
-      const res = await fetch(`/api/developer?email=${email}&password=${passowrd}`,
-            {
-                method:"GET"
-        })
+      const res = await fetch(`/api/developer?email=${email}&password=${password}`,
+        {
+        method: "GET"
+      })
         if (res.ok){
         const data = await res.json()
-        console.log(data)
+        setUser(data.user)
+        router.push("/dashboard")
         }
     } catch (error) {
-        console.error(error)
+        console.error(error,"test")
     }
   }
   return (
@@ -37,7 +41,7 @@ function Login() {
       <p className="text-center p-4 text-2xl text font-semibold text-[#4a4e69]">
         Administrator Login
       </p>
-      <form onSubmit={submitHandle} className="flex flex-col w-[28.125rem] mx-auto mt-4 gap-4">
+      <form method="GET" onSubmit={submitHandle} className="flex flex-col w-[28.125rem] mx-auto mt-4 gap-4">
         <label htmlFor="email" className="text-sm font-medium text-[#4a4e69]">
           <span>Email</span>
           <input
