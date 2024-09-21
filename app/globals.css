@@ -1,4 +1,63 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+span.gi-size-20 {
+    font-size: 20px;
+    font-variation-settings: 'OPSZ' 20;
+}
 
+span.gi-size-24 {
+    font-size: 24px;
+    font-variation-settings: 'OPSZ' 24;
+}
+span.gi-size-28 {
+    font-size: 28px;
+    font-variation-settings: 'OPSZ' 28;
+}
+
+span.gi-size-32 {
+    font-size: 32px;
+    font-variation-settings: 'OPSZ' 32;
+}
+
+span.gi-size-40 {
+    font-size: 40px;
+    font-variation-settings: 'OPSZ' 40;
+}
+
+span.gi-size-48 {
+    font-size: 48px;
+    font-variation-settings: 'OPSZ' 48;
+}
+
+span.wght-100 {
+    font-variation-settings: 'wght' 100;
+}
+
+span.wght-200 {
+    font-variation-settings: 'wght' 200;
+}
+
+span.wght-300 {
+    font-variation-settings: 'wght' 300;
+}
+
+span.wght-400 {
+    font-variation-settings: 'wght' 400;
+}
+
+span.wght-500 {
+    font-variation-settings: 'wght' 500;
+}
+
+span.wght-600 {
+    font-variation-settings: 'wght' 600;
+}
+
+span.wght-700 {
+    font-variation-settings: 'wght' 700;
+}
+
+span.fill-1 {
+    font-variation-settings: "FILL" 1;
+}
