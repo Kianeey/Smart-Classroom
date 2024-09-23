@@ -1,6 +1,7 @@
 "use client";
 import { userStore } from "@/lib/zustand/userStore";
 
+
 export default function AccMenu() {
   const { user } = userStore();
   return (
@@ -10,10 +11,10 @@ export default function AccMenu() {
       </span>
       <span>
         <span className="block text-lg text-left font-semibold">
-          {/* {user?.name} */} Kiane Adam M Benito
+          {/* {user?.name} */} Benito, Kiane Adam M.
         </span>
         <span className="block text-sm  text-left">
-          {/* {user?.email} */} kime.benito.up@gmail.com
+          {/* {user?.email} */} kime.benito.up@phinmmaed.com
           </span>
       </span>
       <span className="material-symbols-outlined gi-size-28">

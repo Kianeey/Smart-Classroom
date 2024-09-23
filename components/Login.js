@@ -23,7 +23,7 @@ function Login() {
         if (res.ok){
         const data = await res.json()
         setUser(data.user)
-        router.push("/dashboard")
+        router.push("/dashboard/classes")
         }
     } catch (error) {
         console.error(error,"test")
