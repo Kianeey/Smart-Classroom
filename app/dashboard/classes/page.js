@@ -16,9 +16,15 @@ function classes() {
           <span className="block">Class Name</span>
           <span className="block">Teacher</span>
           <span className="block">Time</span>
-          <span className="block">Enroled Students</span>
+          <span className="block">Enrolled Students</span>
         </div>
-       <ClassRow classroom={"MBA 1000"} clName={"CPE 069"} teacher={"Mr. Bentino"} time={"15:00"} enrolledStudents={"420"}/>
+        <ClassRow
+          classroom={"MBA 1000"}
+          clName={"CPE 069"}
+          teacher={"Mr. Bentino"}
+          time={"15:00"}
+          enrolledStudents={"420"}
+        />
       </div>
     </div>
   );
