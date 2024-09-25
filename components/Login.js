@@ -1,13 +1,13 @@
 "use client";
 import { useRouter } from "next/navigation";
-import {userStore} from "@/lib/zustand/userStore";
+import { adminStore } from "@/lib/zustand/adminStore";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 function Login() {
   const router = useRouter();
-  const {setUser} = userStore();
+  const {setAdmin} = adminStore();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const emailupdate = (event) => {
@@ -16,13 +16,13 @@ function Login() {
   const submitHandle = async(event) => {
     event.preventDefault()
     try {
-      const res = await fetch(`/api/developer?email=${email}&password=${password}`,
+      const res = await fetch(`/api/developer/admin?email=${email}&password=${password}`,
         {
         method: "GET"
       })
         if (res.ok){
         const data = await res.json()
-        setUser(data.user)
+        setAdmin(data.admin)
         router.push("/dashboard/classes")
         }
     } catch (error) {

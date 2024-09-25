@@ -6,9 +6,6 @@ function students() {
     <div className="rounded-md overflow-hidden bg-white min-h-full">
       <div className="flex flex-row justify-between gap-6 p-4">
         <span className="text-[#4A4E69] font-bold">Students</span>
-        <button className="text-white text-xs bg-[#4A4E69] rounded-full px-6">
-          Add Student
-        </button>
       </div>
       <div className="p-2">
         <div className="grid grid-cols-5 py-2 gap-2 bg-[#4A4E69] text-center text-white">
