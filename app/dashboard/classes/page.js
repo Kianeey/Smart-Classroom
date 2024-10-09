@@ -1,14 +1,12 @@
-"use client";
 import ClassRow from "@/components/ClassRow";
+import AddClass from "@/components/AddClass";
 
-function classes() {
+function Classespage() {
   return (
     <div className="rounded-md overflow-hidden bg-white min-h-full">
       <div className="flex flex-row justify-between gap-6 p-4">
         <span className="text-[#4A4E69] font-bold">Classes</span>
-        <button className="text-white text-xs bg-[#6e3e54] rounded-full px-6">
-          Add Class
-        </button>
+       <AddClass/>
       </div>
       <div className="p-2">
         <div className="grid grid-cols-5 py-2 gap-2 bg-[#4A4E69] text-center text-white">
@@ -21,12 +19,12 @@ function classes() {
         <ClassRow
           classroom={"MBA 1000"}
           clName={"CPE 069"}
-          teacher={"Mr. Bentino"}
+          teacher={"sample teacher1"}
           time={"15:00"}
-          enrolledStudents={"420"}
+          enrolledStudents={"30"}
         />
       </div>
     </div>
   );
 }
-export default classes;
+export default Classespage;

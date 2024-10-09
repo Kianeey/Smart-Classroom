@@ -1,11 +1,13 @@
 "use client";
 import TeachersRow from "@/components/TeachersRow";
+import AddTeacher from "@/components/AddTeacher";
 
-function teachers() {
+function Teacherspage() {
   return (
     <div className="rounded-md overflow-hidden bg-white min-h-full">
       <div className="flex flex-row justify-between gap-6 p-4">
         <span className="text-[#4A4E69] font-bold">Students</span>
+        <AddTeacher/>
       </div>
       <div className="p-2">
         <div className="grid grid-cols-5 py-2 gap-2 bg-[#4A4E69] text-center text-white">
@@ -16,9 +18,9 @@ function teachers() {
           <span className="block">Schedule</span>
         </div>
         <TeachersRow
-          firstName={"Kups"}
-          lastName={"Bentino"}
-          emailAddress={"KupsBentino.up@phinmmaed.com"}
+          firstName={"sample"}
+          lastName={"teacher"}
+          emailAddress={"sampleteacher1.up@phinmmaed.com"}
           assignedClass={"3"}
           schedule={"MBA1000"}
         />
@@ -26,4 +28,4 @@ function teachers() {
     </div>
   );
 }
-export default teachers;
+export default Teacherspage;

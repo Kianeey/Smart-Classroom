@@ -1,11 +1,13 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { adminStore } from "@/lib/zustand/adminStore";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+
 function Login() {
+  const formref = useRef(null)
   const router = useRouter();
   const {setAdmin} = adminStore();
   const [email, setEmail] = useState("");
@@ -25,9 +27,17 @@ function Login() {
         setAdmin(data.admin)
         router.push("/dashboard/classes")
         }
+        else {
+          window.alert("User not Found"),
+          setEmail("")
+          setPassword("")
+          formref.current.reset()
+        }
+
     } catch (error) {
-        console.error(error,"test")
+        console.error(error);
     }
+   
   }
   return (
     <div className="flex flex-col justify-center min-h-dvh bg-[#fcfcf7]">
@@ -41,7 +51,7 @@ function Login() {
       <p className="text-center p-4 text-2xl text font-semibold text-[#4a4e69]">
         Administrator Login
       </p>
-      <form method="GET" onSubmit={submitHandle} className="flex flex-col w-[28.125rem] mx-auto mt-4 gap-4">
+      <form method="GET" ref={formref} onSubmit={submitHandle} className="flex flex-col w-[28.125rem] mx-auto mt-4 gap-4">
         <label htmlFor="email" className="text-sm font-medium text-[#4a4e69]">
           <span>Email</span>
           <input
@@ -51,10 +61,7 @@ function Login() {
             className="border-2 border-[#4a4e69] rounded-lg p-2 block w-[28.125rem]"
           />
         </label>
-        <label
-          htmlFor="password"
-          className="text-sm font-medium text-[#4a4e69]"
-        >
+        <label htmlFor="password" className="text-sm font-medium text-[#4a4e69]">
           <span>Password</span>
           <input
             type="password"
@@ -65,20 +72,15 @@ function Login() {
             className="border-2 border-[#4a4e69] rounded-lg p-2 block w-[28.125rem]"
           />
         </label>
-        <Link
-          href={""}
-          className="text-end text-[#4a4e69] text-sm font-medium"
-        >
+        <Link href={""} className="text-end text-[#4a4e69] text-sm font-medium">
           Forgot password?
         </Link>
-        <button
-          type="submit"
-          className="w-fit py-2 px-16 mx-auto rounded-lg bg-[#4a4e69] text-white"
-        >
+        <button type="submit" className="w-fit py-2 px-16 mx-auto rounded-lg bg-[#4a4e69] text-white">
           Login
         </button>
       </form>
     </div>
   );
 }
+
 export default Login;

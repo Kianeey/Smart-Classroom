@@ -9,7 +9,7 @@ export default function Nav() {
     <nav className="text-[#4A4E69]">
       <Link
         className={`${
-          pathname === "/dashboard/classes" ? "bg-[#4A4E69] text-white" : "bg-[#D9D9D9] "
+          pathname.includes("/dashboard/classes") ? "bg-[#4A4E69] text-white" : "bg-[#D9D9D9] "
         } flex flex-row items-center gap-1 p-2  my-3 rounded-xl`}
         href={"/dashboard/classes"}
       >
@@ -18,7 +18,7 @@ export default function Nav() {
       </Link>
       <Link
         className={`${
-          pathname === "/dashboard/teachers" ? "bg-[#4A4E69] text-white" : "bg-[#D9D9D9] "
+          pathname.includes("/dashboard/teachers") ? "bg-[#4A4E69] text-white" : "bg-[#D9D9D9] "
         } flex flex-row items-center gap-1 p-2 my-3 rounded-xl`}
         href={"/dashboard/teachers"}
       >
@@ -27,7 +27,7 @@ export default function Nav() {
       </Link>
       <Link
         className={`${
-          pathname === "/dashboard/students" ? "bg-[#4A4E69] text-white" : "bg-[#D9D9D9] "
+          pathname.includes("/dashboard/students")  ? "bg-[#4A4E69] text-white" : "bg-[#D9D9D9] "
         } flex flex-row items-center gap-1 p-2  my-3 rounded-xl`}
         href={"/dashboard/students"}
       >
