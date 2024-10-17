@@ -1,5 +1,6 @@
 import ClassRow from "@/components/ClassRow";
 import AddClass from "@/components/AddClass";
+import mongoConnection from "@/lib/mongoose/mongoConnection";
 
 function Classespage() {
   return (
