@@ -37,7 +37,7 @@ export default function AddStudentPage() {
   return (
       <form ref={formref} className="bg-white p-8 rounded-lg shadow-lg flex flex-col min-h-full gap-4 justify-between" onSubmit={addStudentHandle}>
         <div>
-        <div className="flex flex-row gap-4 h">
+        <div className="flex flex-row gap-4">
         <label className="block text-base font-medium text-[#4A4E69]">
         First Name
           <input type="text" className="bg-gray-200 text-sm mt-1 p-2 block  border-gray-300  rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" onChange={(event) => {setFirstName(event.target.value)}}/>

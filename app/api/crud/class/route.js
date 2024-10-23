@@ -5,19 +5,23 @@ import mongoConnection from "@/lib/mongoose/mongoConnection";
 export async function POST(req, res) {
   await mongoConnection();
   try {
-    const { classroom, subject, teacher, time, students, block } =
+    const { classroom, subject, section, startTime, endTime, day, students,teacher} =
       await req.json();
     const _class = await Class.create({
       classroom,
       subject,
-      teacher,
-      time,
+      section,
+      startTime,
+      endTime,
+      day,
       students,
-      block,
+      teacher,
+
     });
     if (_class) {
       return NextResponse.json(
         {
+          message: "Class Added",
           _class,
         },
         {

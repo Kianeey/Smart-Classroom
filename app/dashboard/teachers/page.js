@@ -11,8 +11,7 @@ function Teacherspage() {
       </div>
       <div className="p-2">
         <div className="grid grid-cols-3 py-2 gap-2 bg-[#4A4E69] text-center text-white">
-          <span className="block">First Name</span>
-          <span className="block">Last Name</span>
+          <span className="block">Name</span>
           <span className="block">E-mail Address</span>
         </div>
         <TeachersRow

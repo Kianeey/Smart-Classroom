@@ -2,7 +2,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function Nav() {
+
+export default function Nav({isCollapsed}) {
   const pathname = usePathname();
 
   return (
@@ -14,7 +15,7 @@ export default function Nav() {
         href={"/dashboard/classes"}
       >
         <span className="material-symbols-outlined">home</span>
-        <span>Classes</span>
+        <span className={`${isCollapsed? "hidden" :""}`}>Classes</span>
       </Link>
       <Link
         className={`${
@@ -23,7 +24,7 @@ export default function Nav() {
         href={"/dashboard/teachers"}
       >
         <span className="material-symbols-outlined">person_play</span>
-        <span>Teachers</span>
+        <span className={`${isCollapsed? "hidden" :""}`}>Teachers</span>
       </Link>
       <Link
         className={`${
@@ -32,7 +33,7 @@ export default function Nav() {
         href={"/dashboard/students"}
       >
         <span className="material-symbols-outlined">patient_list</span>
-        <span>Students</span>
+        <span className={`${isCollapsed? "hidden" :""}`}>Students</span>
       </Link>
     </nav>
   );

@@ -4,7 +4,7 @@ const ScheduleTable = () => {
  
   const schedule = [
     { day: 'Monday', time: '8:00 AM', subject: 'CPE 053 Embedded Systems 1', sections: ['BSCPE03-1'], room: 'MBA 101', duration: 2 },
-    { day: 'Tuesday', time: '11:00 AM', subject: 'CPE 054 Embedded Systems 2', sections: ['BSCPE03-2'], room: 'MBA 202', duration: 1 },
+    { day: 'Tuesday', time: '11:00 AM', subject: 'CPE 054 Embedded Systems 2', sections: ['BSCPE03-2'], room: 'MBA 202', duration: 2 },
     { day: 'Wednesday', time: '2:00 PM', subject: 'CPE 055 Embedded Systems 3', sections: ['BSCPE03-1'], room: 'MBA 303', duration: 2 },
 
   ];

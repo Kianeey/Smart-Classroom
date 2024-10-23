@@ -14,7 +14,7 @@ export default function DashboardLayout({ children }) {
     <div className="flex flex-row min-h-dvh">
       <div
         className={`transition-all duration-300 ${
-          isCollapsed ? "w-16" : "w-72"
+          isCollapsed ? "w-18" : "w-72"
         } bg-white`}
       >
         <button
@@ -28,7 +28,7 @@ export default function DashboardLayout({ children }) {
         <div className="p-4">
           <AccMenu isCollapsed={isCollapsed} />
           <hr className="my-6 border-t border-[#4A4E69]" />
-          <Nav />
+          <Nav isCollapsed={isCollapsed} />
         </div>
       </div>
       <main className="flex-grow bg-gray-200 py-8 px-2">{children}</main>

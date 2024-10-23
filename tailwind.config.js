@@ -7,6 +7,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      padding: {
+        '31.25rem': '500px'},
+      width: {
+        '18': '4.5rem',
+      },
+      margin: {
+        '22rem': '352px',
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

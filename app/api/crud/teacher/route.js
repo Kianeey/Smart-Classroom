@@ -2,6 +2,26 @@ import { NextResponse } from "next/server";
 import Teacher from "@/lib/mongoose/models/Teacher";
 import mongoConnection from "@/lib/mongoose/mongoConnection";
 
+export async function GET (req,res){
+  await mongoConnection();
+  try {
+    const teachers = await Teacher.find({})
+    if (teachers)
+      {
+      return NextResponse.json({teachers},{status: 200})
+      }
+  } catch (error) {
+    return NextResponse.json(
+      {
+        message: "Failed",
+      },
+      {
+        status: 500,
+      }
+    );
+  }
+}
+
 export async function POST (req,res) {
   await mongoConnection();
 
